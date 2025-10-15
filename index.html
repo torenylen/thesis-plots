@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MEX - AI Music Coordinate Plotter</title>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-3.0.1.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
+</head>
+<body>
+    <input type="file" id="csvFile" accept=".csv">
+	<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+    <div id='textDiv'>Here is some text!</div>
+    <audio controls id="audio0"></audio>
+    <button id='buttonClosest' onclick=setCurrentSongToClose(1)>Select closest song</button>
+    <button id='buttonSecondClosest' onclick=setCurrentSongToClose(2)>Select second closest song</button>
+    <button id='buttonOpenSuno' onclick=openSuno()>Open Suno</button>
+    <button id='buttonOpenUdio'onclick=openUdio()>Open Udio</button>
+    <div id='textCoordsDiv'>No Coords</div>
+    <div id='textColorDiv'>No Color</div>
+    <input type="text" placeholder="load songid..." id="searchField"></input>
+    <button id="buttonSearch" onclick=loadSongIdFromSearchField()>Load</button>
+    <script src="app.js"></script>
+</body>
+</html>
